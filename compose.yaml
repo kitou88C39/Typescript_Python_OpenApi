@@ -6,16 +6,9 @@ services:
       - '8000:8000'
 
   nginx:
-    image: nginx:stable-alpine
+    build: ./frontend
+    container_name: nginx_server
     ports:
-      - '80:80'
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - '9000:80'
     depends_on:
-      - app
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
+      - flask
