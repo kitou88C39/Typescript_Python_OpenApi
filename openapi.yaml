@@ -12,24 +12,36 @@ paths:
       summary: Return a greeting message
       responses:
         '200':
-          description: A list of users.
+          description: A greeting message.
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/User'
-        '500':
-          description: Internal server error
+                type: string
+                example: 'Hello, World!'
+  /calculate:
     post:
-      summary: Create a new user
-      description: Creates a new user with the provided details.
+      summary: Perform a calculation
       requestBody:
+        description: Input numbers for the calculation.
         required: true
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/NewUser'
+            type: object
+              properties:
+              num1:
+                type: number
+                description: The first number.
+              num2:
+                type: number
+                description: The second number.
+              operation:
+                type: string
+                description: The operation to perform.
+                enum:
+                  - add
+                  - subtract
+                  - multiply
+                  - divide
       responses:
         '201':
           description: User created successfully.
