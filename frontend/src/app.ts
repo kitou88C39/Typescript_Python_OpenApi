@@ -1,12 +1,12 @@
-import { Configuration, OpenAIApi } from './grenerated/index';
+import { Configuration, DefaultApi } from './grenerated/index';
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+const config = new Configuration({
+  basePath: 'api',
 });
 
-const openai = new OpenAIApi(configuration);
+const openai = new DefaultApi(config);
 
-const response = await openai.createCompletion({
-  model: 'gpt-3.5-turbo',
-  prompt: 'Hello, world!',
+document.getElementById('calculate')?.addEventListener('click', async () => {
+  const response = await DefaultApi.greetsGet();
+  document.getElementById('output')!.textContent = response.message ?? '';
 });
