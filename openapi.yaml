@@ -28,13 +28,13 @@ paths:
           application/json:
             schema:
               type: object
-                properties:
-              num1:
-                type: number
-                example: 5
-              num2:
-                type: number
-                example: 10
+              properties:
+                num1:
+                  type: number
+                  example: 5
+                num2:
+                  type: number
+                  example: 10
       responses:
         '200':
           description: Calculation result.
@@ -42,12 +42,14 @@ paths:
             application/json:
               schema:
                 type: object
-              properties:
-              num1:
-                type: number
-                example: 5
-              num2:
-                type: number
-                example: 10
-
-
+                properties:
+                  num1:
+                    type: number
+                    example: 5
+                  num2:
+                    type: number
+                    example: 10
+                  result:
+                    type: number
+                    description: The result of the calculation.
+                    example: 15
