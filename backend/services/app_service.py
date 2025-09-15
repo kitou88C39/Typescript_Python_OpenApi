@@ -1,5 +1,5 @@
 def handle_app_greets():
-    return "Hello, World!"
+    return "Hello, World! from service"
 
-def handle_app_calculate(num1, num2):
+def handle_calculate(num1, num2):
     return num1 + num2
