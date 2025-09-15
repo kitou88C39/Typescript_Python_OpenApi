@@ -30,18 +30,10 @@ paths:
               properties:
               num1:
                 type: number
-                description: The first number.
+                example: 5
               num2:
                 type: number
-                description: The second number.
-              operation:
-                type: string
-                description: The operation to perform.
-                enum:
-                  - add
-                  - subtract
-                  - multiply
-                  - divide
+                example: 10
       responses:
         '201':
           description: User created successfully.
