@@ -26,8 +26,9 @@ paths:
         required: true
         content:
           application/json:
-            type: object
-              properties:
+            schema:
+              type: object
+                properties:
               num1:
                 type: number
                 example: 5
@@ -35,15 +36,18 @@ paths:
                 type: number
                 example: 10
       responses:
-        '201':
-          description: User created successfully.
+        '200':
+          description: Calculation result.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-        '400':
-          description: Invalid input
-        '500':
-          description: Internal server error
+                type: object
+              properties:
+              num1:
+                type: number
+                example: 5
+              num2:
+                type: number
+                example: 10
 
 
